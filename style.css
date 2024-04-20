@@ -1,0 +1,255 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-size: 20px;
+}
+.grid-container{
+  display: grid;
+  max-width: 768px;
+  height: 100vh;
+  grid-template-rows: 7% 34% 59%;
+  grid-template-columns: 100%;
+  grid-template-areas: "topBar"
+  "res"
+  "btns";
+  background-color: #E6E6E6;
+}
+.nonShow{
+  display: none;
+}
+
+/* topBar */
+.topBar{
+  grid-area: topBar;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0 0 15px 0px;
+  background-color: #E6E6E6;
+  color: #3D3D3D;
+  & .fa-xmark{
+    padding: 15px 15px 10px 20px;
+  }
+  & .calcText{
+    padding: 15px 15px 0px 15px;
+  }
+  & .hoverI{
+    padding: 15px 20px 10px 20px;
+  
+  }
+  & .icons > i{
+    font-size: 16px;
+    color: #3D3D3D;
+  }
+}
+.fa-xmark:hover{
+  background-color: red;
+  padding: 15px 15px 10px 20px;
+}
+
+.hoverI:hover{
+  background-color: #CFCFCF;
+}
+
+/* res */
+.res{
+  background-color: #E6E6E6;
+  grid-area: res;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20% 70% 10% ;
+  padding-top: 15px;
+
+
+}
+.iconsRes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.leftSide{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  & .leftSide--text{
+    padding: 15px 15px 15px 0px;
+    font-size: 20px;
+    font-weight: lighter;
+  } 
+  & .fa-bars{
+    padding: 15px 15px 15px 15px;
+  }
+}
+
+.leftSide .fa-bars:hover{
+  background-color: #CFCFCF;
+}
+.fa-clock-rotate-left{
+  padding-right: 15px;
+}
+
+/**********************result: input part ******************/
+.input{
+  margin-top: 10px;
+  margin: 10px;
+}
+.input #calculator{
+  width: 100%;
+  padding: 30px 10px 20px 10px;
+  background-color: #E6E6E6;
+  font-size: 25px;
+  border: none;
+  text-align: right;
+}
+.input #calculator:focus{
+  outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* ****************************result: M part */
+.Mpart{
+  display: flex;
+  justify-content: space-between;
+  /* max-width: 100%; */
+}
+.btn{
+  min-width: 16%;
+  border: none;
+  background-color: #E6E6E6;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px 10px 5px;
+  justify-content: center;
+
+}
+.btn:first-child{
+  padding-left: 30px ;
+}
+/* buttons */
+
+.btns{
+  grid-area: btns;
+  display: grid;
+  grid-template-columns:  auto auto auto auto;
+  grid-template-rows:  auto auto auto auto auto ;
+}
+.button{
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #E6E6E6;
+}
+.IconsBtn{
+  background-color: #F0F0F0;
+}
+.IconsBtn:hover{
+  background-color: #E6E6E6;
+}
+.num{
+  background-color: #FAFAFA;
+}
+.num:hover{
+  background-color: #E6E6E6;
+}
+
+.sideBar{
+  display: none;
+}
+
+@media (min-width:768px){
+  .grid-container{
+    display: grid;
+    min-width: 100%;
+    height: 100vh;
+    grid-template-rows: 7% 34% 59%;
+    grid-template-columns: 77% 23%;
+    grid-template-areas: "topBar topBar"
+    "res sideBar"
+    "btns sideBar";
+  }
+  .Mpart{
+    display: flex;
+    justify-content: left;
+  }
+  .btn{
+    min-width:50px;
+    font-weight: 400;
+    padding: 0 30px 20px 50px;
+    justify-content: left;
+  }
+  .btns{
+    grid-area: btns;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows:  auto auto auto auto auto ;
+  }
+  .button{
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #E6E6E6;
+  }
+  .Btn1{
+    display: none;
+  }
+  .nonShow{
+    display: block;
+  }
+  .rigthSide{
+    display: none;
+  }
+ .input #calculator{
+  font-size: 45px;
+} 
+.responM{
+  display: none;
+}
+
+/***********************sideBar******************/
+.sideBar{
+  background-color: #E6E6E6;
+  grid-area: sideBar;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 15% 85%  ;
+}
+
+.items{
+  display: flex;
+  & .item{
+    list-style: none;
+    padding-right: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+  }
+}
+.item1::after{
+  content: "";
+  position: absolute;
+  width: 69px;
+  height: 3px;
+  background-color: orange;
+  top: 30px;
+  right: 0;
+  left: 0;
+}
+
+.text-side{
+  font-size: 16px;
+  font-weight: bolder;
+
+}
+}
