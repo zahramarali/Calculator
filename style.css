@@ -103,7 +103,7 @@ body{
   width: 100%;
   padding: 30px 10px 20px 10px;
   background-color: #E6E6E6;
-  font-size: 25px;
+  font-size: 20px;
   border: none;
   text-align: right;
 }
@@ -169,10 +169,94 @@ input[type=number] {
   display: none;
 }
 
-@media (min-width:768px){
+@media (min-width:500px) and (max-width:1024px){
   .grid-container{
     display: grid;
     min-width: 100%;
+    height: 100vh;
+    grid-template-rows: 7% 34% 59%;
+    grid-template-columns: 77% 23%;
+    grid-template-areas: "topBar topBar"
+    "res sideBar"
+    "btns sideBar";
+  }
+  .Mpart{
+    display: flex;
+    justify-content: left;
+  }
+  .btn{
+    min-width:50px;
+    font-weight: 400;
+    padding: 0 20px 10px 30px;
+    justify-content: left;
+  }
+
+  .btns{
+    grid-area: btns;
+    display: grid;
+    grid-template-columns:  auto auto auto auto;
+    grid-template-rows:  auto auto auto auto auto ;
+  }
+  .button{
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #E6E6E6;
+  }
+
+  .rigthSide{
+    display: none;
+  }
+ .input #calculator{
+  font-size: 30px;
+} 
+.responM{
+  display: none;
+}
+
+/***********************sideBar******************/
+.sideBar{
+  background-color: #E6E6E6;
+  grid-area: sideBar;
+  display: grid;
+
+  grid-template-columns: auto;
+  grid-template-rows: 15% 85%  ;
+}
+
+.items{
+  display: flex;
+  & .item{
+    list-style: none;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+  }
+}
+.item1::after{
+  content: "";
+  position: absolute;
+  width: 69px;
+  height: 3px;
+  background-color: orange;
+  top: 30px;
+  right: 0;
+  left: 0;
+}
+
+.text-side{
+  font-size: 12px;
+  font-weight: bolder;
+
+}}
+
+  
+
+
+@media (min-width:1025px){
+  .grid-container{
+    display: grid;
+    width: 100vw;
     height: 100vh;
     grid-template-rows: 7% 34% 59%;
     grid-template-columns: 77% 23%;
@@ -211,7 +295,7 @@ input[type=number] {
     display: none;
   }
  .input #calculator{
-  font-size: 45px;
+  font-size: 35px;
 } 
 .responM{
   display: none;
@@ -224,13 +308,14 @@ input[type=number] {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 15% 85%  ;
+  /* width: 200px; */
 }
 
 .items{
   display: flex;
   & .item{
     list-style: none;
-    padding-right: 25px;
+    padding-right: 15px;
     font-weight: bold;
     font-size: 20px;
     position: relative;
@@ -248,8 +333,11 @@ input[type=number] {
 }
 
 .text-side{
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bolder;
 
 }
 }
+
+
+@media (min-width:500px) and (max-width:1024px){
