@@ -8,7 +8,7 @@ body{
 }
 .grid-container{
   display: grid;
-  max-width: 768px;
+  /* max-width: 768px; */
   height: 100vh;
   grid-template-rows: 7% 34% 59%;
   grid-template-columns: 100%;
@@ -171,11 +171,9 @@ input[type=number] {
 
 @media (min-width:500px) and (max-width:1024px){
   .grid-container{
-    display: grid;
-    min-width: 100%;
     height: 100vh;
     grid-template-rows: 7% 34% 59%;
-    grid-template-columns: 77% 23%;
+    grid-template-columns: 66% 33%;
     grid-template-areas: "topBar topBar"
     "res sideBar"
     "btns sideBar";
@@ -189,6 +187,8 @@ input[type=number] {
     font-weight: 400;
     padding: 0 20px 10px 30px;
     justify-content: left;
+    font-size: 12px;
+
   }
 
   .btns{
@@ -207,7 +207,7 @@ input[type=number] {
     display: none;
   }
  .input #calculator{
-  font-size: 30px;
+  font-size: 25px;
 } 
 .responM{
   display: none;
@@ -256,7 +256,7 @@ input[type=number] {
 @media (min-width:1025px){
   .grid-container{
     display: grid;
-    width: 100vw;
+    min-width: 100%;
     height: 100vh;
     grid-template-rows: 7% 34% 59%;
     grid-template-columns: 77% 23%;
@@ -340,4 +340,35 @@ input[type=number] {
 }
 
 
-@media (min-width:500px) and (max-width:1024px){
+@media (min-width:740px){
+  .grid-container{
+    grid-template-columns: auto 300px;
+  }
+}
+@media (max-height:620px){
+ 
+  .Mpart{
+    display: flex;
+    justify-content: left;
+  }
+  .Btn1{
+    display: block;
+  }
+  .nonShow{
+    display: none;
+  }
+  .btns{
+    grid-template-columns:  auto auto auto auto;
+    grid-template-rows:  auto auto auto auto auto ;
+  }
+
+
+}
+@media (max-height:420px){
+  .grid-container{
+    grid-template-rows: 7% 34% 59%;}
+
+  .btns{
+    overflow-y: auto;
+  }
+}
